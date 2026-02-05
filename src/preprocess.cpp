@@ -482,7 +482,7 @@ void Preprocess::velodyne_handler(const sensor_msgs::msg::PointCloud2::ConstShar
           time_last[layer] = added_pt.curvature;
           continue;
         }
-
+        
         // compute offset time
         if (yaw_angle <= yaw_fp[layer]) { added_pt.curvature = (yaw_fp[layer] - yaw_angle) / omega_l; }
         else { added_pt.curvature = (yaw_fp[layer] - yaw_angle + 360.0) / omega_l; }
